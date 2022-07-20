@@ -8,31 +8,39 @@ class App extends Component {
     super();
     this.state = {
 			reservations: [
-				{
-					id: 1,
-					name: 'Christie',
-					date: '12/29',
-					time: '7:00',
-					number: 12,
-				},
-				{
-					id: 2,
-					name: 'Leta',
-					date: '4/5',
-					time: '7:00',
-					number: 2,
-				},
-				{
-					id: 3,
-					name: 'Pam',
-					date: '1/21',
-					time: '6:00',
-					number: 4,
-				}
+				// {
+				// 	id: 1,
+				// 	name: 'Christie',
+				// 	date: '12/29',
+				// 	time: '7:00',
+				// 	number: 12,
+				// },
+				// {
+				// 	id: 2,
+				// 	name: 'Leta',
+				// 	date: '4/5',
+				// 	time: '7:00',
+				// 	number: 2,
+				// },
+				// {
+				// 	id: 3,
+				// 	name: 'Pam',
+				// 	date: '1/21',
+				// 	time: '6:00',
+				// 	number: 4,
+				// }
 			],
 		};
   }
+  componentDidMount = () => {
+    return fetch('http://localhost:3001/api/v1/reservations')
+    .then(response => response.json())
+    .then(data => { //console.log(data, "DATA39")
+    {this.setState({ reservations : data })}
+  })
+  }
   render() {
+    // console.log(this.state.reservations, "STATERESER")
     return (
 			<main>
 				<div className="App">

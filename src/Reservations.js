@@ -3,8 +3,9 @@ import Card from './Card';
 import './Reservations.css';
 
 const Reservations = ({reservations}) => {
+  // console.log(reservations, 6)
   const reservationCards = reservations.map(reservation => {
-    // console.log(reservations)
+    // console.log(reservation.name, "RESERNAME")
     return (
     <Card 
       id={reservation.id}

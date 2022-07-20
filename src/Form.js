@@ -12,9 +12,18 @@ import './Form.css'
       numberOfGuest: '' 
     }
   }
-  
+
   handleChange = (event) => {
     this.setState({ [event.target.name] : event.target.value })
+  }
+
+  submitReservation = (event) => {
+    event.preventDefault();
+    const newReservation = {
+      id: Date.now(),
+      ...this.state
+    }
+    this.props.addReservation(newReservation)
   }
 
   render() {
@@ -48,7 +57,7 @@ import './Form.css'
 					value={this.state.numberOfGuest}
           onChange={event => this.handleChange(event)}
 				/>
-				<button>Make Reservation</button>
+				<button onClick={event => this.submitReservation(event)}>Make Reservation</button>
 			</section>
 		);
   }

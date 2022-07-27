@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 import './Reservations.css';
 
-const Reservations = ({reservations}) => {
+const Reservations = ({reservations, cancelReservation }) => {
   // console.log(reservations, 6)
   const reservationCards = reservations.map(reservation => {
     // console.log(reservation.name, "RESERNAME")
@@ -14,6 +14,7 @@ const Reservations = ({reservations}) => {
       date={reservation.date}
       time={reservation.time}
       number={reservation.number}
+      cancelReservation={cancelReservation} //bunu niye yazdik 
     />
     );
   });

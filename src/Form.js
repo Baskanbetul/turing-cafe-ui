@@ -20,20 +20,21 @@ import './Form.css'
 		} 
     this.setState({ [event.target.name] : event.target.value })
   }
-
+	
   submitReservation = event => {
-    event.preventDefault();
-    // const newReservation = {
-    //   ...this.state,
-    //   // id: Date.now(),
-		// 	// number: parseInt(this.state.number)
-    // }
-    this.props.addReservation(this.state);
+		event.preventDefault();
+    const newReservation = {
+			  ...this.state,
+			  id: Date.now(),
+				number: parseInt(this.state.number)
+			}
+			this.props.addReservation(newReservation);
+			this.clearInputs();
 		// this.clearInputs();
   }
 	
 	clearInputs = () => { //not
-		this.setState = ({ name: ' ', date: ' ', time: ' ', number: 0 })
+		this.setState({ name: ' ', date: ' ', time: ' ', number: 0})
 	}
 
 	showInputMessage = () => {

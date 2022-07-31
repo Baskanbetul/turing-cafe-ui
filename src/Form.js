@@ -44,7 +44,7 @@ import './Form.css'
   render() {
     return (
 			<>
-				{this.state.inputMessage && <h2>You are filling out the form!</h2>}
+				{this.state.inputMessage && <h2> 🫣 You are filling out the form!</h2>}
 				<form
 					onChange={() => this.showInputMessage()}
 				>
@@ -78,7 +78,7 @@ import './Form.css'
 							value={this.state.number}
 							onChange={(event) => this.handleChange(event)}
 						/>
-						<button onClick={(event) => this.submitReservation(event)}>
+						<button class='glow-on-hover' onClick={(event) => this.submitReservation(event)}>
 							Make Reservation
 						</button>
 					</section>

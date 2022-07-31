@@ -109,7 +109,7 @@ class App extends Component {
 						reservations={this.state.reservations}
 						cancelReservation={this.cancelReservation}
 					/>
-					{this.state.error && <h2>Something is going wrong!</h2>}
+					{this.state.error && <h2> 👎🏻 Something is going wrong! 👎🏻  </h2>}
 					{/* render form and error message if we have error together  */}
 				</div>
 			</main>
